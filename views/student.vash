@@ -1,0 +1,16 @@
+<div>
+    <h5>Name : @model.student.studentname</h5>
+    <h5>Father name : @model.student.fathername</h5>
+</div>
+
+<div style="display: flex;">
+    <div style="font-weight: bold; margin-right: 10px;">Semester : </div>
+    <select name="semester" hx-get="/semester/courses" hx-target="#courses" hx-trigger="change" hx-swap="innerHTML">
+        <option selected>Select Semester</option>
+        @model.semesters.forEach(function(sem){
+            <option value="@sem">@sem</option>
+        })
+    </select>
+</div>
+
+<div id="courses"></div>
